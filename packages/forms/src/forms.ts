@@ -18,6 +18,8 @@
  */
 
 
+import {FormControl as FormControlClass, FormControlCtor} from './model';
+
 export {ɵInternalFormsSharedModule} from './directives';
 export {AbstractControlDirective} from './directives/abstract_control_directive';
 export {AbstractFormGroupDirective} from './directives/abstract_form_group_directive';
@@ -45,8 +47,11 @@ export {SelectMultipleControlValueAccessor} from './directives/select_multiple_c
 export {ɵNgSelectMultipleOption} from './directives/select_multiple_control_value_accessor';
 export {AsyncValidator, AsyncValidatorFn, CheckboxRequiredValidator, EmailValidator, MaxLengthValidator, MaxValidator, MinLengthValidator, MinValidator, PatternValidator, RequiredValidator, ValidationErrors, Validator, ValidatorFn} from './directives/validators';
 export {FormBuilder} from './form_builder';
-export {AbstractControl, AbstractControlOptions, FormArray, FormControl, FormGroup} from './model';
+export {AbstractControl, AbstractControlOptions, FormArray, FormGroup} from './model';
 export {NG_ASYNC_VALIDATORS, NG_VALIDATORS, Validators} from './validators';
 export {VERSION} from './version';
 
 export * from './form_providers';
+
+export const FormControl: FormControlCtor = FormControlClass as FormControlCtor;
+export type FormControl = FormControlClass;
